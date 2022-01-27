@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  # resources :comments
-
   # get 'articles' => 'articles#index'
   # get 'articles/new' => 'articles#new'
   # post 'articles' => 'articles#create'

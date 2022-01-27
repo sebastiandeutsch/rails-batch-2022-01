@@ -5,3 +5,31 @@
 <p>
   <%= @article.text %>
 </p>
+
+<h2>
+  Kommentare
+</h2>
+
+<% @article.comments.each do |comment| %>
+  <li>
+    <p>
+      <%= comment.text %>
+    </p>
+
+    <%= button_to 'löschen', article_comment_path(@article, comment), method: :delete %>
+  </li>
+<% end %>
+
+<h2>
+  Neuen Kommentar erstellen
+</h2>
+
+<%= form_for [@article, Comment.new] do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
